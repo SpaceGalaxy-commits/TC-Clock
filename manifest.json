@@ -1,0 +1,21 @@
+{
+  "name": "TC Clock",
+  "short_name": "TC Clock",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "icons/clock-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/clock-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

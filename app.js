@@ -1,0 +1,77 @@
+const mainTime = document.getElementById("mainTime");
+const frame = document.getElementById("frame");
+const dateEl = document.getElementById("date");
+const statusEl = document.getElementById("status");
+
+const btnRehearsal = document.getElementById("btnRehearsal");
+const btnLive = document.getElementById("btnLive");
+const customInput = document.getElementById("customInput");
+const btnApply = document.getElementById("btnApply");
+
+const FPS = 30;
+
+/* ステータス変更 */
+function setStatus(text) {
+  statusEl.textContent = text;
+
+  if (text === "本番") {
+    statusEl.style.color = "#ff3b30";
+  } else {
+    statusEl.style.color = "#ffcc00";
+  }
+}
+
+/* ボタン */
+btnRehearsal.addEventListener("click", () => {
+  setStatus("リハーサル");
+});
+
+btnLive.addEventListener("click", () => {
+  setStatus("本番");
+});
+
+/* カスタムテキスト反映 */
+btnApply.addEventListener("click", () => {
+  const text = customInput.value.trim();
+
+  if (text !== "") {
+    setStatus(text);
+  }
+});
+
+/* Enterでも反映 */
+customInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    btnApply.click();
+  }
+});
+
+/* 時計更新 */
+function updateClock() {
+  const now = new Date();
+
+  const h = String(now.getHours()).padStart(2, "0");
+  const m = String(now.getMinutes()).padStart(2, "0");
+  const s = String(now.getSeconds()).padStart(2, "0");
+
+  const f = String(
+    Math.floor((now.getMilliseconds() / 1000) * FPS)
+  ).padStart(2, "0");
+
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, "0");
+  const dd = String(now.getDate()).padStart(2, "0");
+
+  mainTime.textContent = `${h}:${m}:${s}`;
+  frame.textContent = `:${f}`;
+  dateEl.textContent = `${yyyy}/${mm}/${dd}`;
+}
+
+updateClock();
+setInterval(updateClock, 1000 / 30);
+
+/* 初期 */
+setStatus("リハーサル");
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service-worker.js");
+}
