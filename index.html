@@ -4,41 +4,63 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Clock</title>
+  <title>TC Clock</title>
+
+  <link rel="manifest" href="manifest.json">
+
+  <meta name="theme-color" content="#000000">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
 </head>
 
 <body>
 
   <div class="container">
 
+    <!-- ロゴ -->
     <img src="logo.png" id="logo">
 
+    <!-- ステータス -->
     <div id="status">リハーサル</div>
 
+    <!-- 時計 -->
     <div id="clock">
-      <span id="mainTime">00:00:00</span><span id="frame">:00</span>
+      <span id="mainTime">00:00:00</span>
+      <span id="frame">:00</span>
     </div>
 
+    <!-- 日付 -->
     <div id="date">0000/00/00</div>
 
   </div>
 
-  <!-- 操作UI -->
+  <!-- コントロール -->
   <div class="controls">
 
     <button id="btnRehearsal">リハ</button>
+
     <button id="btnLive">本番</button>
 
-    <input id="customInput" type="text" placeholder="カスタム表示">
+    <input
+      id="customInput"
+      type="text"
+      placeholder="カスタム表示"
+    >
 
     <button id="btnApply">反映</button>
+
+    <!-- FPS選択 -->
+    <select id="fpsSelect">
+      <option value="29.97" selected>29.97</option>
+      <option value="23.976">23.976</option>
+    </select>
+
+    <!-- LTC -->
+    <button id="btnJam">Push Jam</button>
 
   </div>
 
   <script src="app.js"></script>
+
 </body>
 </html>

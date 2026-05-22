@@ -21,7 +21,7 @@ body {
 /* ロゴ */
 #logo {
   width: 950px;
-  max-width: 60vw;
+  max-width: 80vw;
   margin-bottom: 20px;
 }
 
@@ -37,18 +37,19 @@ body {
 
 /* 時計 */
 #clock {
-  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-family: "SF Mono", "Menlo", monospace;
   font-weight: 700;
-  letter-spacing: 0.05em;
   font-variant-numeric: tabular-nums;
   text-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
+/* 時分秒 */
 #mainTime {
   color: white;
   font-size: 11vw;
 }
 
+/* フレーム */
 #frame {
   color: white;
   font-size: 5vw;
@@ -64,38 +65,37 @@ body {
   letter-spacing: 0.1em;
 }
 
-/* 操作UI */
+/* UI */
 .controls {
   position: fixed;
   bottom: 20px;
   right: 20px;
+
   display: flex;
   gap: 8px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
-/* ボタン */
-.controls button {
-  background: rgba(255,255,255,0.1);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.3);
-  padding: 10px 14px;
-  font-size: 14px;
-  border-radius: 8px;
-}
-
-/* 入力欄 */
+.controls button,
+.controls select,
 .controls input {
   background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.3);
   color: white;
-  padding: 10px 12px;
+
+  border: 1px solid rgba(255,255,255,0.3);
+
+  padding: 10px 14px;
+
   border-radius: 8px;
+
   font-size: 14px;
-  outline: none;
-  width: 160px;
 }
 
-.controls input::placeholder {
-  color: rgba(255,255,255,0.5);
+.controls input {
+  width: 180px;
+}
+
+.controls button:active {
+  background: rgba(255,255,255,0.3);
 }
