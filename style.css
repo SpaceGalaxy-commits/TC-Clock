@@ -27,20 +27,19 @@ body {
 
 /* ステータス */
 #status {
-  font-family: "SF Mono", "Menlo", monospace;
+  font-family: "SF Mono", monospace;
   font-size: 4vw;
   font-weight: 700;
   letter-spacing: 0.2em;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   color: #ffcc00;
 }
 
 /* 時計 */
 #clock {
-  font-family: "SF Mono", "Menlo", monospace;
+  font-family: "SF Mono", monospace;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  text-shadow: 0 0 10px rgba(255,255,255,0.3);
 }
 
 /* 時分秒 */
@@ -58,27 +57,42 @@ body {
 
 /* 日付 */
 #date {
-  margin-top: 20px;
+  margin-top: 15px;
   color: #aaa;
-  font-size: 4vw;
+  font-size: 3vw;
   font-family: "SF Mono", monospace;
-  letter-spacing: 0.1em;
 }
 
-/* UI */
+/* LTC UI */
+#ltcControls {
+  margin-top: 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: white;
+
+  font-family: "SF Mono", monospace;
+}
+
+#ltcStatus {
+  color: #00ff9f;
+  font-size: 1.2rem;
+}
+
+/* コントロール */
 .controls {
   position: fixed;
   bottom: 20px;
   right: 20px;
 
   display: flex;
-  gap: 8px;
-  align-items: center;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
 .controls button,
-.controls select,
 .controls input {
   background: rgba(255,255,255,0.1);
   color: white;
@@ -94,8 +108,4 @@ body {
 
 .controls input {
   width: 180px;
-}
-
-.controls button:active {
-  background: rgba(255,255,255,0.3);
 }

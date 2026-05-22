@@ -1,6 +1,7 @@
-const CACHE_NAME = "tc-clock-v1";
+const CACHE_NAME = "tc-clock-v3";
 
 const FILES = [
+
   "./",
   "./index.html",
   "./style.css",
@@ -9,18 +10,39 @@ const FILES = [
   "./logo.png"
 ];
 
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(FILES);
-    })
-  );
-});
+self.addEventListener(
+  "install",
+  (event) => {
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((res) => {
-      return res || fetch(event.request);
-    })
-  );
-});
+    event.waitUntil(
+
+      caches.open(
+        CACHE_NAME
+      ).then((cache) => {
+
+        return cache.addAll(
+          FILES
+        );
+      })
+    );
+  }
+);
+
+self.addEventListener(
+  "fetch",
+  (event) => {
+
+    event.respondWith(
+
+      caches.match(
+        event.request
+      ).then((res) => {
+
+        return (
+          res ||
+          fetch(event.request)
+        );
+      })
+    );
+  }
+);
