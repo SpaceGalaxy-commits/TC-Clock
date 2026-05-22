@@ -1,105 +1,260 @@
-html, body {
+html,
+body {
+
   margin: 0;
   width: 100%;
   height: 100%;
+
   background: black;
+
   overflow: hidden;
 }
 
 body {
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 }
 
 .container {
+
+  width: 100%;
+
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
+  justify-content: center;
 }
 
 /* ロゴ */
+
 #logo {
+
   width: 950px;
+
   max-width: 80vw;
+
   margin-bottom: 20px;
 }
 
 /* ステータス */
+
 #status {
-  font-family: "SF Mono", monospace;
+
+  font-family:
+    "SF Mono",
+    monospace;
+
   font-size: 4vw;
+
   font-weight: 700;
+
   letter-spacing: 0.2em;
+
   margin-bottom: 30px;
+
   color: #ffcc00;
 }
 
 /* 時計 */
+
 #clock {
-  font-family: "SF Mono", monospace;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  font-family:
+    "SF Mono",
+    monospace;
+
   font-weight: 700;
-  font-variant-numeric: tabular-nums;
+
+  font-variant-numeric:
+    tabular-nums;
+
+  line-height: 1;
 }
 
 /* 時分秒 */
+
 #mainTime {
+
   color: white;
+
   font-size: 11vw;
 }
 
 /* フレーム */
+
 #frame {
+
   color: white;
+
   font-size: 5vw;
+
   opacity: 0.7;
+
+  margin-bottom: 1vw;
 }
 
 /* 日付 */
-#date {
-  margin-top: 15px;
-  color: #aaa;
-  font-size: 3vw;
-  font-family: "SF Mono", monospace;
-}
 
-/* LTC UI */
-#ltcControls {
+#date {
+
   margin-top: 20px;
 
+  color: #999;
+
+  font-size: 2.5vw;
+
+  font-family:
+    "SF Mono",
+    monospace;
+}
+
+/* LTC周り */
+
+#ltcControls {
+
+  margin-top: 25px;
+
   display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
   align-items: center;
-  gap: 10px;
+
+  gap: 12px;
 
   color: white;
 
-  font-family: "SF Mono", monospace;
+  font-family:
+    "SF Mono",
+    monospace;
 }
+
+/* LTCラベル */
+
+#ltcControls span {
+
+  font-size: 1rem;
+}
+
+/* LTC状態 */
 
 #ltcStatus {
+
   color: #00ff9f;
-  font-size: 1.2rem;
+
+  font-weight: bold;
 }
 
-/* コントロール */
+/* セレクト */
+
+#ltcControls select {
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  );
+
+  color: white;
+
+  border:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      0.3
+    );
+
+  padding:
+    10px 14px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+/* ボタン */
+
+#ltcControls button {
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  );
+
+  color: white;
+
+  border:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      0.3
+    );
+
+  padding:
+    10px 14px;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+/* 下UI */
+
 .controls {
+
   position: fixed;
+
   bottom: 20px;
+
   right: 20px;
 
   display: flex;
+
   flex-wrap: wrap;
+
   gap: 8px;
 }
 
 .controls button,
 .controls input {
-  background: rgba(255,255,255,0.1);
+
+  background: rgba(
+    255,
+    255,
+    255,
+    0.1
+  );
+
   color: white;
 
-  border: 1px solid rgba(255,255,255,0.3);
+  border:
+    1px solid rgba(
+      255,
+      255,
+      255,
+      0.3
+    );
 
-  padding: 10px 14px;
+  padding:
+    10px 14px;
 
   border-radius: 8px;
 
@@ -107,5 +262,50 @@ body {
 }
 
 .controls input {
+
   width: 180px;
+}
+
+/* iPhone */
+
+@media (max-width: 768px) {
+
+  #logo {
+
+    width: 75vw;
+  }
+
+  #status {
+
+    font-size: 7vw;
+  }
+
+  #mainTime {
+
+    font-size: 18vw;
+  }
+
+  #frame {
+
+    font-size: 8vw;
+  }
+
+  #date {
+
+    font-size: 4vw;
+  }
+
+  #ltcControls {
+
+    gap: 8px;
+  }
+
+  #ltcControls select,
+  #ltcControls button {
+
+    font-size: 12px;
+
+    padding:
+      8px 10px;
+  }
 }
