@@ -309,3 +309,8 @@ body {
       8px 10px;
   }
 }
+
+
+#ltcControls {
+  display: none !important;
+}
